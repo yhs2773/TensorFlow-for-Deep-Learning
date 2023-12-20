@@ -80,7 +80,7 @@ def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_s
     # Label the axes
     ax.set(title='Confusion Matrix',
            xlabel='Predicted label',
-           ylabnel='True label',
+           ylabel='True label',
            xticks=np.arange(n_classes), # create enough axis slots for each class
            yticks=np.arange(n_classes),
            xticklabels=labels, # axes will be labeled with class names (if they exist) or ints
