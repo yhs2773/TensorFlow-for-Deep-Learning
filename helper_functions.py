@@ -1,6 +1,5 @@
 ### We create a bunch of helpful functions throughout the course.
 ### Storing them here so they're easily accessible.
-
 import tensorflow as tf
 
 # Create a function to import an image and resize it to be able to be used with our model
@@ -30,16 +29,16 @@ def load_and_prep_image(filename, img_shape=224, scale=True):
 # Note: The following confusion matrix code is a remix of Scikit-Learn's 
 # plot_confusion_matrix function - https://scikit-learn.org/stable/modules/generated/sklearn.metrics.plot_confusion_matrix.html
 import itertools
-import matplotlib.pyplot as plt
 import numpy as np
+import matplotlib.pyplot as plt
 from sklearn.metrics import confusion_matrix
 
 # Our function needs a different name to sklearn's plot_confusion_matrix
 def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_size=15, norm=False, savefig=False): 
     """Makes a labelled confusion matrix comparing predictions and ground truth labels.
 
-    If classes is passed, confusion matrix will be labelled, if not, integer class values
-    will be used.
+    If classes is passed, confusion matrix will be labeled,
+    if not, integer class values will be used.
 
     Args:
         y_true: Array of truth labels (must be same shape as y_pred).
@@ -80,9 +79,9 @@ def make_confusion_matrix(y_true, y_pred, classes=None, figsize=(10, 10), text_s
     ax.set(title="Confusion Matrix",
            xlabel="Predicted label",
            ylabel="True label",
-           xticks=np.arange(n_classes),    # create enough axis slots for each class
+           xticks=np.arange(n_classes), # create enough axis slots for each class
            yticks=np.arange(n_classes), 
-           xticklabels=labels,             # axes will labeled with class names (if they exist) or ints
+           xticklabels=labels,          # axes will labeled with class names (if they exist) or ints
            yticklabels=labels)
   
     # Make x-axis labels appear on bottom
@@ -250,8 +249,8 @@ def unzip_data(filename):
     zip_ref.extractall()
     zip_ref.close()
 
-# Walk through an image classification directory and find out how many files (images)
-# are in each subdirectory.
+# Walk through an image classification directory and
+# find out how many files (images) are in each subdirectory.
 import os
 
 def walk_through_dir(dir_path):
